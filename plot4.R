@@ -7,8 +7,10 @@ data$Date <- as.Date(data$Date, format = "%d/%m/%Y")
 datetime <- paste(as.Date(data$Date), data$Time)
 data$Datetime <- as.POSIXct(datetime)
 
-
+# set the boundaries and margines
 par(mfrow = c(2,2), mar = c(1,1,1,1), oma = c(0,0,0,0))
+
+Plot the graph within the boundaries
 with(data, {
      plot(Global_active_power ~ Datetime, type = "l", 
      ylab = "Global Active Power", xlab = "")
